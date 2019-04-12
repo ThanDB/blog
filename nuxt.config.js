@@ -1,6 +1,7 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 export default {
   mode: 'spa',
   router: { base: '/blog/' },
@@ -65,6 +66,9 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      // config.performance.hints = false
+      // config.optimization.splitChunks.minSize = 10000
+      // config.optimization.splitChunks.maxSize = 250000
     }
-  }
+  },
 }
